@@ -6,5 +6,23 @@
 			"seleniumWaitTime": "30",
 			"pageLoadDelay": "10000"
 		}
+	},
+	{
+		"prepaidNSO": [
+			{
+				"userInputValues":{
+					"imeiNumber": "357536082126865",
+					"zipCode": "76401"
+				}
+			},
+			{
+				"websiteElementLocators":{
+					"verizonHomePage": "https://www.verizon.com/",
+					"chromeDriveLocation": "/home/sarthakgiri/Downloads/Softwares/chromedriver",
+					"seleniumWaitTime": "30",
+					"pageLoadDelay": "10000"
+				}
+			}
+		]
 	}
 ]

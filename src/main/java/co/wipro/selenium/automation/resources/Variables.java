@@ -21,8 +21,8 @@ public class Variables extends ReadConfigFile {
 	
 	// Prepaid NSO flow variables
 	// user input values
-	protected static String IMEI_NUMBER = "357536082126865";
-	protected static String ZIP_CODE_1 = "76401";
+	protected static String IMEI_NUMBER = "";
+	protected static String ZIP_CODE_1 = "";
 	
 	// website element locators
 	protected static String VERIZON_SHOP = "gnav20-Shop-L1";
@@ -49,6 +49,7 @@ public class Variables extends ReadConfigFile {
 		jsonList.forEach(vars -> setAllVariables((JSONObject)vars));
 	}
 	
+	@SuppressWarnings("unchecked")
 	private static void setAllVariables(JSONObject varObject) {
 		if (varObject.containsKey("commonVariables")) {
 			JSONObject comVarObject = (JSONObject) varObject.get("commonVariables");
@@ -56,6 +57,20 @@ public class Variables extends ReadConfigFile {
 			CHROME_DRIVER = (String) comVarObject.get("chromeDriveLocation");
 			WAIT_TIME = Integer.parseInt((String) comVarObject.get("seleniumWaitTime"));
 			PAGE_LOAD_DELAY = Integer.parseInt((String) comVarObject.get("pageLoadDelay"));
+		}
+		if (varObject.containsKey("prepaidNSO")) {
+			JSONArray prepaidNSOValues = (JSONArray) varObject.get("prepaidNSO");
+			//System.out.println(prepaidNSOValues);
+			prepaidNSOValues.forEach(vars -> setPrepaidNSOValues((JSONObject)vars));
+		}
+	}
+
+	private static void setPrepaidNSOValues(JSONObject varObject) {
+		// TODO Auto-generated method stub
+		if (varObject.containsKey("userInputValues")) {
+			JSONObject flowInputVals = (JSONObject) varObject.get("userInputValues");
+			IMEI_NUMBER = (String) flowInputVals.get("imeiNumber");
+			ZIP_CODE_1 = (String) flowInputVals.get("zipCode");
 		}
 	}
 }
