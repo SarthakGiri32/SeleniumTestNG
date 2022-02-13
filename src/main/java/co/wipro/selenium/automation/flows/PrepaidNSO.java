@@ -1,41 +1,46 @@
 package co.wipro.selenium.automation.flows;
 
-import org.testng.annotations.Test;
+import java.io.IOException;
 
-import co.wipro.selenium.automation.resources.Variables;
+import org.json.simple.parser.ParseException;
+import org.testng.annotations.Test;
 
 /**
  * Class for executing the Prepaid NSO Flow
  * @author Sarthak Giri
  *
  */
-public class PrepaidNSO extends VerizonLocalAutoFunctions {
+public class PrepaidNSO extends LocalAutoFunctions {
 
 	/**
 	 * This is the Main Method used to execute the flow steps
 	 * @throws InterruptedException
+	 * @throws IOException 
+	 * @throws ParseException 
 	 */
 	@Test
-	public static void mainMethod() throws InterruptedException {
+	public static void mainMethod() throws InterruptedException, IOException, ParseException {
 		
-		loadUrl(Variables.VERIZON_WEBSITE, Variables.CHROME_DRIVER);
-		clickElementJSExecutor("id", Variables.VERIZON_SHOP, Variables.WAIT_TIME, false);
-		clickElementJSExecutor("id", Variables.VERIZON_PREPAID_MENU, Variables.WAIT_TIME, false);
-		clickElementJSExecutor("linkText", Variables.VERIZON_PREPAID_OVERVIEW, Variables.WAIT_TIME, true);
-		clickElementWhenVisible("linkText", Variables.VERIZON_BYOD, Variables.WAIT_TIME, true);
-		clickElementWhenVisible("linkText", Variables.VERIZON_JOIN, Variables.WAIT_TIME, true);
-		clickElementJSExecutor("xpath", Variables.VERIZON_SMARTPHONE_DEVICE, Variables.WAIT_TIME, false);
-		clickElementJSExecutor("xpath", Variables.VERIZON_CONTINUE_BUTTON, Variables.WAIT_TIME, false);
-		clickElementJSExecutor("linkText", Variables.VERIZON_I_DONT_KNOW, Variables.WAIT_TIME, false);
-		sendingKey("id", Variables.VERIZON_IMEI_NUMBER_FIELD, Variables.IMEI_NUMBER, Variables.WAIT_TIME, true);
-		clickElementJSExecutor("xpath", Variables.VERIZON_CHECK_MY_DEVICE, Variables.WAIT_TIME, true);
-		clickElementWhenVisible("xpath", Variables.VERIZON_ADD_SIM, Variables.WAIT_TIME, true);
-		sendingKey("name", Variables.VERIZON_ZIP_CODE_FIELD, Variables.ZIP_CODE_1, Variables.WAIT_TIME, true);
-		clickElementJSExecutor("xpath", Variables.VERIZON_REMEMBER_MY_LOCATION, Variables.WAIT_TIME, true);
-		clickElementJSExecutor("xpath", Variables.VERIZON_CONFIRM_LOCATION, Variables.WAIT_TIME, true);
-		clickElementWhenVisible("cssSelector", Variables.VERIZON_LINE_PLAN, Variables.WAIT_TIME, false);
-		clickElementWhenVisible("id", Variables.VERIZON_SELECT_PLAN, Variables.WAIT_TIME, true);
-		clickElementWhenVisible("xpath", Variables.VERIZON_DECLINE_INTERNATIONAL_PLAN, Variables.WAIT_TIME, false);
+		setVariables();
+		
+		loadUrl(VERIZON_WEBSITE, CHROME_DRIVER);
+		clickElementJSExecutor("id", VERIZON_SHOP, WAIT_TIME, false);
+		clickElementJSExecutor("id", VERIZON_PREPAID_MENU, WAIT_TIME, false);
+		clickElementJSExecutor("linkText", VERIZON_PREPAID_OVERVIEW, WAIT_TIME, true);
+		clickElementWhenVisible("linkText", VERIZON_BYOD, WAIT_TIME, true);
+		clickElementWhenVisible("linkText", VERIZON_JOIN, WAIT_TIME, true);
+//		clickElementJSExecutor("xpath", VERIZON_SMARTPHONE_DEVICE, WAIT_TIME, false);
+//		clickElementJSExecutor("xpath", VERIZON_CONTINUE_BUTTON, WAIT_TIME, false);
+//		clickElementJSExecutor("linkText", VERIZON_I_DONT_KNOW, WAIT_TIME, false);
+//		sendingKey("id", VERIZON_IMEI_NUMBER_FIELD, IMEI_NUMBER, WAIT_TIME, true);
+//		clickElementJSExecutor("xpath", VERIZON_CHECK_MY_DEVICE, WAIT_TIME, true);
+//		clickElementWhenVisible("xpath", VERIZON_ADD_SIM, WAIT_TIME, true);
+//		sendingKey("name", VERIZON_ZIP_CODE_FIELD, ZIP_CODE_1, WAIT_TIME, true);
+//		clickElementJSExecutor("xpath", VERIZON_REMEMBER_MY_LOCATION, WAIT_TIME, true);
+//		clickElementJSExecutor("xpath", VERIZON_CONFIRM_LOCATION, WAIT_TIME, true);
+//		clickElementWhenVisible("cssSelector", VERIZON_LINE_PLAN, WAIT_TIME, false);
+//		clickElementWhenVisible("id", VERIZON_SELECT_PLAN, WAIT_TIME, true);
+//		clickElementWhenVisible("xpath", VERIZON_DECLINE_INTERNATIONAL_PLAN, WAIT_TIME, false);
 
 	}
 

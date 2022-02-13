@@ -1,0 +1,10 @@
+[
+	{
+		"commonVariables": {
+			"verizonHomePage": "https://www.verizon.com/",
+			"chromeDriveLocation": "/home/sarthakgiri/Downloads/Softwares/chromedriver",
+			"seleniumWaitTime": "30",
+			"pageLoadDelay": "10000"
+		}
+	}
+]

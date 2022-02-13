@@ -20,7 +20,7 @@ import co.wipro.selenium.automation.resources.Variables;
  * @author Sarthak Giri
  *
  */
-public class VerizonLocalAutoFunctions {
+public class LocalAutoFunctions extends Variables {
 
 	public static WebDriver driver = null;
 	
@@ -88,7 +88,7 @@ public class VerizonLocalAutoFunctions {
 			element.click();
 			System.out.println("Button \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
@@ -138,7 +138,7 @@ public class VerizonLocalAutoFunctions {
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 			System.out.println("Button \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
@@ -190,7 +190,7 @@ public class VerizonLocalAutoFunctions {
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 			System.out.println("Button \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
@@ -214,7 +214,7 @@ public class VerizonLocalAutoFunctions {
 			element.click();
 			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
@@ -239,7 +239,7 @@ public class VerizonLocalAutoFunctions {
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
@@ -266,7 +266,7 @@ public class VerizonLocalAutoFunctions {
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
@@ -316,7 +316,7 @@ public class VerizonLocalAutoFunctions {
 			element.sendKeys(keyValue);
 			System.out.println("sending \"" + keyValue + "\" key to \"" + text + "\" field...");
 			if (pageLoadDelay) {
-				Thread.sleep(Variables.PAGE_LOAD_DELAY);
+				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
 			throw new TimeoutException("ERROR: field \"" + text + "\" took too long to load");
