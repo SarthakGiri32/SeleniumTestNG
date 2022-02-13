@@ -12,7 +12,7 @@ public class ReadConfigFile {
 	protected static JSONArray createJsonArray() throws IOException, ParseException {
 		//JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
-        String configFilePath = "/home/sarthakgiri/Documents/java-workspace/SelenimTestNG/src/main/resources/Config.json";
+        String configFilePath = "/home/sarthakgiri/Documents/java-workspace/SeleniumTestNG/src/main/resources/Config.json";
         FileReader reader = new FileReader(configFilePath);
 		Object obj = jsonParser.parse(reader);
         JSONArray configList = (JSONArray) obj;
