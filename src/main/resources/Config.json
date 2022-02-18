@@ -16,11 +16,14 @@
 				}
 			},
 			{
-				"websiteElementLocators":{
-					"verizonHomePage": "https://www.verizon.com/",
-					"chromeDriveLocation": "/home/sarthakgiri/Downloads/Softwares/chromedriver",
-					"seleniumWaitTime": "30",
-					"pageLoadDelay": "10000"
+				"webElemLocs":{
+					"vznShop": "gnav20-Shop-L1",
+					"vznPreMenu": "gnav20-Shop-L2-7",
+					"vznPreOver": "Prepaid overview",
+					"vznByod": "Learn how",
+					"vznJoin": "Join Verizon",
+					"vznDevice": "//p[contains(text(),'Smartphone')]",
+					"vznContinue": "//button[contains(text(), 'Continue')]"
 				}
 			}
 		]

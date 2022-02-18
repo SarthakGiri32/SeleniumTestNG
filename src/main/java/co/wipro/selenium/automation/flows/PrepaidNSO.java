@@ -1,8 +1,10 @@
 package co.wipro.selenium.automation.flows;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.json.simple.parser.ParseException;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 /**
@@ -22,8 +24,12 @@ public class PrepaidNSO extends LocalAutoFunctions {
 	public static void mainMethod() throws InterruptedException, IOException, ParseException {
 		
 		setVariables();
+		String currentDate = new Date().toString();
+		//System.out.println("Current Date and Time: " + currentDate);
 		
 		loadUrl(VERIZON_WEBSITE, CHROME_DRIVER);
+		
+		Reporter.log("Flow Start Date and Time: " + currentDate);
 		clickElementJSExecutor("id", VERIZON_SHOP, WAIT_TIME, false);
 		clickElementJSExecutor("id", VERIZON_PREPAID_MENU, WAIT_TIME, false);
 		clickElementJSExecutor("linkText", VERIZON_PREPAID_OVERVIEW, WAIT_TIME, true);

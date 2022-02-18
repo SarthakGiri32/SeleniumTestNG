@@ -25,13 +25,13 @@ public class Variables extends ReadConfigFile {
 	protected static String ZIP_CODE_1 = "";
 	
 	// website element locators
-	protected static String VERIZON_SHOP = "gnav20-Shop-L1";
-	protected static String VERIZON_PREPAID_MENU = "gnav20-Shop-L2-7";
-	protected static String VERIZON_PREPAID_OVERVIEW = "Prepaid overview";
-	protected static String VERIZON_BYOD = "Learn how";
-	protected static String VERIZON_JOIN = "Join Verizon";
-	protected static String VERIZON_SMARTPHONE_DEVICE = "//p[contains(text(),'Smartphone')]";
-	protected static String VERIZON_CONTINUE_BUTTON = "//button[contains(text(), 'Continue')]";
+	protected static String VERIZON_SHOP = "";
+	protected static String VERIZON_PREPAID_MENU = "";
+	protected static String VERIZON_PREPAID_OVERVIEW = "";
+	protected static String VERIZON_BYOD = "";
+	protected static String VERIZON_JOIN = "";
+	protected static String VERIZON_SMARTPHONE_DEVICE = "";
+	protected static String VERIZON_CONTINUE_BUTTON = "";
 	protected static String VERIZON_I_DONT_KNOW = "I don't know";
 	protected static String VERIZON_IMEI_NUMBER_FIELD = "imei";
 	protected static String VERIZON_CHECK_MY_DEVICE = "//button[contains(text(), 'Check my device')]";
@@ -58,7 +58,7 @@ public class Variables extends ReadConfigFile {
 			WAIT_TIME = Integer.parseInt((String) comVarObject.get("seleniumWaitTime"));
 			PAGE_LOAD_DELAY = Integer.parseInt((String) comVarObject.get("pageLoadDelay"));
 		}
-		if (varObject.containsKey("prepaidNSO")) {
+		else if (varObject.containsKey("prepaidNSO")) {
 			JSONArray prepaidNSOValues = (JSONArray) varObject.get("prepaidNSO");
 			//System.out.println(prepaidNSOValues);
 			prepaidNSOValues.forEach(vars -> setPrepaidNSOValues((JSONObject)vars));
@@ -71,6 +71,16 @@ public class Variables extends ReadConfigFile {
 			JSONObject flowInputVals = (JSONObject) varObject.get("userInputValues");
 			IMEI_NUMBER = (String) flowInputVals.get("imeiNumber");
 			ZIP_CODE_1 = (String) flowInputVals.get("zipCode");
+		}
+		else if (varObject.containsKey("webElemLocs")) {
+			JSONObject elemLocs = (JSONObject) varObject.get("webElemLocs");
+			VERIZON_SHOP = (String) elemLocs.get("vznShop");
+			VERIZON_PREPAID_MENU = (String) elemLocs.get("vznPreMenu");
+			VERIZON_PREPAID_OVERVIEW = (String) elemLocs.get("vznPreOver");
+			VERIZON_BYOD = (String) elemLocs.get("vznByod");
+			VERIZON_JOIN = (String) elemLocs.get("vznJoin");
+			VERIZON_SMARTPHONE_DEVICE = (String) elemLocs.get("vznDevice");
+			VERIZON_CONTINUE_BUTTON = (String) elemLocs.get("vznContinue");
 		}
 	}
 }
