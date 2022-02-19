@@ -9,10 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">MainSuite</th></tr>
-<tr><td><a href="#t0">SeleniumTest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">162,869</td><td></td><td></td></tr>
+<tr><td><a href="#t0">SeleniumTest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">97,626</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MainSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SeleniumTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">co.wipro.selenium.automation.flows.PrepaidNSO</td><td><a href="#m0">mainMethod</a></td><td rowspan="1">1645187680814</td><td rowspan="1">162840</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">MainSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SeleniumTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">co.wipro.selenium.automation.flows.PrepaidNSO</td><td><a href="#m0">mainMethod</a></td><td rowspan="1">1645282181349</td><td rowspan="1">97588</td></tr></tbody>
 </table>
-<h2>SeleniumTest</h2><h3 id="m0">co.wipro.selenium.automation.flows.PrepaidNSO#mainMethod</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Current Date and Time: Fri Feb 18 18:04:40 IST 2022</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>SeleniumTest</h2><h3 id="m0">co.wipro.selenium.automation.flows.PrepaidNSO#mainMethod</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Website load: "https://www.verizon.com/"... SUCCESSFUL!<br/>Flow Start Date and Time: Sat Feb 19 20:19:41 IST 2022<br/>Button click: "VERIZON_SHOP"... SUCCESSFUL!<br/>Button click: "VERIZON_PREPAID_MENU"... SUCCESSFUL!<br/>Button click: "VERIZON_PREPAID_OVERVIEW"... SUCCESSFUL!<br/>Button click: "VERIZON_BYOD"... SUCCESSFUL!<br/>Button click: "VERIZON_JOIN"... SUCCESSFUL!<br/>Button click: "VERIZON_SMARTPHONE_DEVICE"... SUCCESSFUL!<br/>Button click: "VERIZON_CONTINUE_BUTTON"... SUCCESSFUL!<br/>Button click: "VERIZON_I_DONT_KNOW"... SUCCESSFUL!<br/>Sending Key to: "VERIZON_IMEI_NUMBER_FIELD"... FAILED!</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: ERROR: field &quot;ime&quot; took too long to load
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;sarthakgiri-HP-ProBook-440-G4&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.13.0-30-generic&apos;, java.version: &apos;17&apos;
+Driver info: driver.version: unknown
+	at co.wipro.selenium.automation.flows.LocalAutoFunctions.sendingKey(LocalAutoFunctions.java:346)
+	at co.wipro.selenium.automation.flows.PrepaidNSO.mainMethod(PrepaidNSO.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at co.wipro.selenium.automation.execution.SeleniumTestNGExecution.main(SeleniumTestNGExecution.java:24)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

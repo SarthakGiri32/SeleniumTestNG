@@ -23,7 +23,11 @@
 					"vznByod": "Learn how",
 					"vznJoin": "Join Verizon",
 					"vznDevice": "//p[contains(text(),'Smartphone')]",
-					"vznContinue": "//button[contains(text(), 'Continue')]"
+					"vznContinue": "//button[contains(text(), 'Continue')]",
+					"vznIDontKnow": "I don't know",
+					"vznImei": "imei",
+					"vznCheckDev": "//button[contains(text(), 'Check my device')]",
+					"vznAddSim": "//button[contains(text(), 'Add SIM to cart')]"
 				}
 			}
 		]

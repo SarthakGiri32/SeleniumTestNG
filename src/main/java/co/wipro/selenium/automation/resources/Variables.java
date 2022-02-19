@@ -32,10 +32,10 @@ public class Variables extends ReadConfigFile {
 	protected static String VERIZON_JOIN = "";
 	protected static String VERIZON_SMARTPHONE_DEVICE = "";
 	protected static String VERIZON_CONTINUE_BUTTON = "";
-	protected static String VERIZON_I_DONT_KNOW = "I don't know";
-	protected static String VERIZON_IMEI_NUMBER_FIELD = "imei";
-	protected static String VERIZON_CHECK_MY_DEVICE = "//button[contains(text(), 'Check my device')]";
-	protected static String VERIZON_ADD_SIM = "//button[contains(text(), 'Add SIM to cart')]";
+	protected static String VERIZON_I_DONT_KNOW = "";
+	protected static String VERIZON_IMEI_NUMBER_FIELD = "";
+	protected static String VERIZON_CHECK_MY_DEVICE = "";
+	protected static String VERIZON_ADD_SIM = "";
 	protected static String VERIZON_ZIP_CODE_FIELD = "zip";
 	protected static String VERIZON_REMEMBER_MY_LOCATION = "//p[contains(text(),'Remember My Location')]";
 	protected static String VERIZON_CONFIRM_LOCATION = "//button[contains(text(), 'Confirm location')]";
@@ -53,14 +53,13 @@ public class Variables extends ReadConfigFile {
 	private static void setAllVariables(JSONObject varObject) {
 		if (varObject.containsKey("commonVariables")) {
 			JSONObject comVarObject = (JSONObject) varObject.get("commonVariables");
-			VERIZON_WEBSITE = (String) comVarObject.get("verizonHomePage");
-			CHROME_DRIVER = (String) comVarObject.get("chromeDriveLocation");
-			WAIT_TIME = Integer.parseInt((String) comVarObject.get("seleniumWaitTime"));
-			PAGE_LOAD_DELAY = Integer.parseInt((String) comVarObject.get("pageLoadDelay"));
+			VERIZON_WEBSITE =  comVarObject.get("verizonHomePage").toString();
+			CHROME_DRIVER =  comVarObject.get("chromeDriveLocation").toString();
+			WAIT_TIME = Integer.parseInt( comVarObject.get("seleniumWaitTime").toString());
+			PAGE_LOAD_DELAY = Integer.parseInt( comVarObject.get("pageLoadDelay").toString());
 		}
 		else if (varObject.containsKey("prepaidNSO")) {
 			JSONArray prepaidNSOValues = (JSONArray) varObject.get("prepaidNSO");
-			//System.out.println(prepaidNSOValues);
 			prepaidNSOValues.forEach(vars -> setPrepaidNSOValues((JSONObject)vars));
 		}
 	}
@@ -69,18 +68,22 @@ public class Variables extends ReadConfigFile {
 		// TODO Auto-generated method stub
 		if (varObject.containsKey("userInputValues")) {
 			JSONObject flowInputVals = (JSONObject) varObject.get("userInputValues");
-			IMEI_NUMBER = (String) flowInputVals.get("imeiNumber");
-			ZIP_CODE_1 = (String) flowInputVals.get("zipCode");
+			IMEI_NUMBER =  flowInputVals.get("imeiNumber").toString();
+			ZIP_CODE_1 =  flowInputVals.get("zipCode").toString();
 		}
 		else if (varObject.containsKey("webElemLocs")) {
 			JSONObject elemLocs = (JSONObject) varObject.get("webElemLocs");
-			VERIZON_SHOP = (String) elemLocs.get("vznShop");
-			VERIZON_PREPAID_MENU = (String) elemLocs.get("vznPreMenu");
-			VERIZON_PREPAID_OVERVIEW = (String) elemLocs.get("vznPreOver");
-			VERIZON_BYOD = (String) elemLocs.get("vznByod");
-			VERIZON_JOIN = (String) elemLocs.get("vznJoin");
-			VERIZON_SMARTPHONE_DEVICE = (String) elemLocs.get("vznDevice");
-			VERIZON_CONTINUE_BUTTON = (String) elemLocs.get("vznContinue");
+			VERIZON_SHOP =  elemLocs.get("vznShop").toString();
+			VERIZON_PREPAID_MENU =  elemLocs.get("vznPreMenu").toString();
+			VERIZON_PREPAID_OVERVIEW =  elemLocs.get("vznPreOver").toString();
+			VERIZON_BYOD =  elemLocs.get("vznByod").toString();
+			VERIZON_JOIN =  elemLocs.get("vznJoin").toString();
+			VERIZON_SMARTPHONE_DEVICE =  elemLocs.get("vznDevice").toString();
+			VERIZON_CONTINUE_BUTTON =  elemLocs.get("vznContinue").toString();
+			VERIZON_I_DONT_KNOW =  elemLocs.get("vznIDontKnow").toString();
+			VERIZON_IMEI_NUMBER_FIELD =  elemLocs.get("vznImei").toString();
+			VERIZON_CHECK_MY_DEVICE =  elemLocs.get("vznCheckDev").toString();
+			VERIZON_ADD_SIM = elemLocs.get("vznAddSim").toString();
 		}
 	}
 }

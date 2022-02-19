@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 import co.wipro.selenium.automation.resources.Variables;
 
@@ -41,8 +42,10 @@ public class LocalAutoFunctions extends Variables {
 		
 		try {
 			driver.get(url);
-			System.out.println("Website \"" + url + "\" loaded...");
+//			System.out.println("Website \"" + url + "\" loaded...");
+			Reporter.log("Website load: \"" + url + "\"... SUCCESSFUL!", true);
 		} catch (WebDriverException e) {
+			Reporter.log("Website load: \"" + url + "\"... FAILED!", true);
 			throw new WebDriverException("ERROR: URL not resolved");
 		}
 	}
@@ -52,9 +55,10 @@ public class LocalAutoFunctions extends Variables {
 	 * @param selector
 	 * @param text
 	 * @param duration
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElement(String selector, String text, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElement(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
 		switch(selector) {
 		case "id":
@@ -86,11 +90,13 @@ public class LocalAutoFunctions extends Variables {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 			element.click();
-			System.out.println("Button \"" + text + "\" clicked...");
+//			System.out.println("Button \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
 		}
 	}
@@ -102,9 +108,10 @@ public class LocalAutoFunctions extends Variables {
 	 * @param text
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElementJSExecutor(String selector, String text, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElementJSExecutor(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
 		switch(selector) {
 		case "id":
@@ -136,11 +143,13 @@ public class LocalAutoFunctions extends Variables {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-			System.out.println("Button \"" + text + "\" clicked...");
+//			System.out.println("Button \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
 		}
 	}
@@ -152,9 +161,10 @@ public class LocalAutoFunctions extends Variables {
 	 * @param text
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElementWhenVisible(String selector, String text, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElementWhenVisible(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
 		switch(selector) {
 		case "id":
@@ -188,11 +198,13 @@ public class LocalAutoFunctions extends Variables {
 			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
 			Thread.sleep(5000);
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-			System.out.println("Button \"" + text + "\" clicked...");
+//			System.out.println("Button \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button \"" + text + "\" took too long to load");
 		}
 	}
@@ -203,20 +215,23 @@ public class LocalAutoFunctions extends Variables {
 	 * @param n
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElement(String text, int n, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElement(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.className(text)));
 			List<WebElement> listOfElements = driver.findElements(By.className(text));
 			element = listOfElements.get(n);
 			element.click();
-			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+//			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
 		}
 	}
@@ -228,20 +243,23 @@ public class LocalAutoFunctions extends Variables {
 	 * @param n
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElementJSExecutor(String text, int n, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElementJSExecutor(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.className(text)));
 			List<WebElement> listOfElements = driver.findElements(By.className(text));
 			element = listOfElements.get(n);
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+//			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
 		}
 	}
@@ -253,9 +271,10 @@ public class LocalAutoFunctions extends Variables {
 	 * @param n
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void clickElementWhenVisible(String text, int n, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void clickElementWhenVisible(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.className(text)));
@@ -264,11 +283,13 @@ public class LocalAutoFunctions extends Variables {
 			((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
 			Thread.sleep(5000);
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+//			System.out.println("Button order " + n + " of class \"" + text + "\" clicked...");
+			Reporter.log("Button click: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Button click: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: Button order " + n + " of class \"" + text + "\" took too long to load");
 		}
 	}
@@ -280,9 +301,10 @@ public class LocalAutoFunctions extends Variables {
 	 * @param keyValue
 	 * @param duration
 	 * @param pageLoadDelay 
+	 * @param stepName 
 	 * @throws InterruptedException 
 	 */
-	public static void sendingKey(String selector, String text, String keyValue, int duration, boolean pageLoadDelay) throws InterruptedException {
+	public static void sendingKey(String selector, String text, String keyValue, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
 		switch(selector) {
 		case "id":
@@ -314,11 +336,13 @@ public class LocalAutoFunctions extends Variables {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 			element.sendKeys(keyValue);
-			System.out.println("sending \"" + keyValue + "\" key to \"" + text + "\" field...");
+//			System.out.println("sending \"" + keyValue + "\" key to \"" + text + "\" field...");
+			Reporter.log("Sending Key to: \"" + stepName + "\"... SUCCESSFUL!", true);
 			if (pageLoadDelay) {
 				Thread.sleep(PAGE_LOAD_DELAY);
 			}
 		} catch (TimeoutException e) {
+			Reporter.log("Sending Key to: \"" + stepName + "\"... FAILED!", true);
 			throw new TimeoutException("ERROR: field \"" + text + "\" took too long to load");
 		}
 	}
