@@ -36,12 +36,12 @@ public class Variables extends ReadConfigFile {
 	protected static String VERIZON_IMEI_NUMBER_FIELD = "";
 	protected static String VERIZON_CHECK_MY_DEVICE = "";
 	protected static String VERIZON_ADD_SIM = "";
-	protected static String VERIZON_ZIP_CODE_FIELD = "zip";
-	protected static String VERIZON_REMEMBER_MY_LOCATION = "//p[contains(text(),'Remember My Location')]";
-	protected static String VERIZON_CONFIRM_LOCATION = "//button[contains(text(), 'Confirm location')]";
-	protected static String VERIZON_LINE_PLAN = "[aria-label=\"Select 5 GB plan\"]";
-	protected static String VERIZON_SELECT_PLAN = "selectPlanBtn";
-	protected static String VERIZON_DECLINE_INTERNATIONAL_PLAN = "//button[contains(text(), 'Not now')]";
+	protected static String VERIZON_ZIP_CODE_FIELD = "";
+	protected static String VERIZON_REMEMBER_MY_LOCATION = "";
+	protected static String VERIZON_CONFIRM_LOCATION = "";
+	protected static String VERIZON_LINE_PLAN = "";
+	protected static String VERIZON_SELECT_PLAN = "";
+	protected static String VERIZON_DECLINE_INTERNATIONAL_PLAN = "";
 	
 	@SuppressWarnings("unchecked")
 	protected static void setVariables() throws IOException, ParseException {
@@ -84,6 +84,12 @@ public class Variables extends ReadConfigFile {
 			VERIZON_IMEI_NUMBER_FIELD =  elemLocs.get("vznImei").toString();
 			VERIZON_CHECK_MY_DEVICE =  elemLocs.get("vznCheckDev").toString();
 			VERIZON_ADD_SIM = elemLocs.get("vznAddSim").toString();
+			VERIZON_ZIP_CODE_FIELD = elemLocs.get("vznZip").toString();
+			VERIZON_REMEMBER_MY_LOCATION = elemLocs.get("vznRemLoc").toString();
+			VERIZON_CONFIRM_LOCATION = elemLocs.get("vznConLoc").toString();
+			VERIZON_LINE_PLAN = elemLocs.get("vznLine").toString();
+			VERIZON_SELECT_PLAN = elemLocs.get("vznPlanSel").toString();
+			VERIZON_DECLINE_INTERNATIONAL_PLAN = elemLocs.get("vznDecIntPlan").toString();
 		}
 	}
 }

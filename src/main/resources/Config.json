@@ -27,7 +27,13 @@
 					"vznIDontKnow": "I don't know",
 					"vznImei": "imei",
 					"vznCheckDev": "//button[contains(text(), 'Check my device')]",
-					"vznAddSim": "//button[contains(text(), 'Add SIM to cart')]"
+					"vznAddSim": "//button[contains(text(), 'Add SIM to cart')]",
+					"vznZip": "zip",
+					"vznRemLoc": "//p[contains(text(),'Remember My Location')]",
+					"vznConLoc": "//button[contains(text(), 'Confirm location')]",
+					"vznLine": "[aria-label=\"Select 5 GB plan\"]",
+					"vznPlanSel": "selectPlanBtn",
+					"vznDecIntPlan": "//button[contains(text(), 'Not now')]"
 				}
 			}
 		]
