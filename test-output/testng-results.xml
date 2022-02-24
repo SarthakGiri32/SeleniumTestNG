@@ -5,7 +5,7 @@
       <![CDATA[Website load: "https://www.verizon.com/"... SUCCESSFUL!]]>
     </line>
     <line>
-      <![CDATA[Flow Start Date and Time: Sun Feb 20 20:27:11 IST 2022]]>
+      <![CDATA[Flow Start Date and Time: Thu Feb 24 13:28:21 IST 2022]]>
     </line>
     <line>
       <![CDATA[Button click: "VERIZON_SHOP"... SUCCESSFUL!]]>
@@ -59,18 +59,18 @@
       <![CDATA[Button click: "VERIZON_DECLINE_INTERNATIONAL_PLAN"... SUCCESSFUL!]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-02-20T20:27:11 IST" name="MainSuite" finished-at="2022-02-20T20:29:22 IST" duration-ms="131329">
+  <suite started-at="2022-02-24T13:28:21 IST" name="MainSuite" finished-at="2022-02-24T13:30:39 IST" duration-ms="137605">
     <groups>
     </groups>
-    <test started-at="2022-02-20T20:27:11 IST" name="SeleniumTest" finished-at="2022-02-20T20:29:22 IST" duration-ms="131329">
+    <test started-at="2022-02-24T13:28:21 IST" name="SeleniumTest" finished-at="2022-02-24T13:30:39 IST" duration-ms="137605">
       <class name="co.wipro.selenium.automation.flows.PrepaidNSO">
-        <test-method signature="mainMethod()[pri:0, instance:co.wipro.selenium.automation.flows.PrepaidNSO@67c27493]" started-at="2022-02-20T20:27:11 IST" name="mainMethod" finished-at="2022-02-20T20:29:22 IST" duration-ms="131280" status="PASS">
+        <test-method signature="mainMethod()[pri:0, instance:co.wipro.selenium.automation.flows.PrepaidNSO@1a482e36]" started-at="2022-02-24T13:28:21 IST" name="mainMethod" finished-at="2022-02-24T13:30:39 IST" duration-ms="137559" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Website load: "https://www.verizon.com/"... SUCCESSFUL!]]>
             </line>
             <line>
-              <![CDATA[Flow Start Date and Time: Sun Feb 20 20:27:11 IST 2022]]>
+              <![CDATA[Flow Start Date and Time: Thu Feb 24 13:28:21 IST 2022]]>
             </line>
             <line>
               <![CDATA[Button click: "VERIZON_SHOP"... SUCCESSFUL!]]>
