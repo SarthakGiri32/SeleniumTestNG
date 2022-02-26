@@ -14,14 +14,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import co.wipro.selenium.automation.resources.Variables;
+import co.wipro.selenium.automation.resources.ReadConfigFile;
 
 /**
  * Class containing common functions for the Automation Flows
  * @author Sarthak Giri
  *
  */
-public class LocalAutoFunctions extends Variables {
+public class LocalAutoFunctions extends ReadConfigFile {
 
 	public static WebDriver driver = null;
 	
