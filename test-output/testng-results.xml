@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
       <![CDATA[Website load: "https://www.verizon.com/"... SUCCESSFUL!]]>
     </line>
     <line>
-      <![CDATA[Flow Start Date and Time: Sat Feb 26 12:55:29 IST 2022]]>
+      <![CDATA[Flow Start Date and Time: Fri Mar 18 21:02:19 IST 2022]]>
     </line>
     <line>
       <![CDATA[Button click: "VERIZON_SHOP"... SUCCESSFUL!]]>
@@ -59,18 +59,18 @@
       <![CDATA[Button click: "VERIZON_DECLINE_INTERNATIONAL_PLAN"... SUCCESSFUL!]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-02-26T12:55:29 IST" name="MainSuite" finished-at="2022-02-26T12:57:26 IST" duration-ms="117075">
+  <suite name="MainSuite" duration-ms="150332" started-at="2022-03-18T21:02:18 IST" finished-at="2022-03-18T21:04:49 IST">
     <groups>
     </groups>
-    <test started-at="2022-02-26T12:55:29 IST" name="SeleniumTest" finished-at="2022-02-26T12:57:26 IST" duration-ms="117075">
+    <test name="SeleniumTest" duration-ms="150332" started-at="2022-03-18T21:02:18 IST" finished-at="2022-03-18T21:04:49 IST">
       <class name="co.wipro.selenium.automation.flows.PrepaidNSO">
-        <test-method signature="mainMethod()[pri:0, instance:co.wipro.selenium.automation.flows.PrepaidNSO@77fbd92c]" started-at="2022-02-26T12:55:29 IST" name="mainMethod" finished-at="2022-02-26T12:57:26 IST" duration-ms="117041" status="PASS">
+        <test-method status="PASS" signature="mainMethod()[pri:0, instance:co.wipro.selenium.automation.flows.PrepaidNSO@146ba0ac]" name="mainMethod" duration-ms="150266" started-at="2022-03-18T21:02:19 IST" finished-at="2022-03-18T21:04:49 IST">
           <reporter-output>
             <line>
               <![CDATA[Website load: "https://www.verizon.com/"... SUCCESSFUL!]]>
             </line>
             <line>
-              <![CDATA[Flow Start Date and Time: Sat Feb 26 12:55:29 IST 2022]]>
+              <![CDATA[Flow Start Date and Time: Fri Mar 18 21:02:19 IST 2022]]>
             </line>
             <line>
               <![CDATA[Button click: "VERIZON_SHOP"... SUCCESSFUL!]]>

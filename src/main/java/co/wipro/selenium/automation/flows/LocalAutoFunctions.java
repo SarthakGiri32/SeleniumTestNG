@@ -26,9 +26,9 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	public static WebDriver driver = null;
 	
 	/**
-	 * Function for starting the web driver and loading an URL
-	 * @param url
-	 * @param ld
+	 * Function for starting the web driver and loading a URL
+	 * @param url - Website URL
+	 * @param ld - Local Web driver Path
 	 */
 	public static void loadUrl(String url, String ld) {
 		try {
@@ -52,11 +52,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	
 	/**
 	 * Function for selecting a web element based on a particular selector and locator value
-	 * @param selector
-	 * @param text
-	 * @param duration
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param selector - element attribute type
+	 * @param text - element attribute value
+	 * @param duration - Web Driver Wait Duration
+	 * @param stepName - name of the step
+	 * @param pageLoadDelay - the delay for page loading
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElement(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
@@ -104,12 +105,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	/**
 	 * Function for selecting a web element based on a particular selector and locator value,
 	 * using Javascript Executor
-	 * @param selector
-	 * @param text
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param selector - element attribute type
+	 * @param text - element attribute value
+	 * @param duration - Web Driver Wait Duration
+	 * @param stepName - name of the step
+	 * @param pageLoadDelay - the delay for page loading
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElementJSExecutor(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
@@ -157,12 +158,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	/**
 	 * Function for selecting a web element based on a particular selector and locator value,
 	 * after that element is visible on page
-	 * @param selector
-	 * @param text
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param selector - element attribute type
+	 * @param text - element attribute value
+	 * @param duration - Web Driver Wait Duration
+	 * @param stepName - name of the step
+	 * @param pageLoadDelay - the delay for page loading
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElementWhenVisible(String selector, String text, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;
@@ -211,12 +212,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	
 	/**
 	 * Function for selecting a web element from a list of web elements having the same class name
-	 * @param text
-	 * @param n
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param text - classname value
+	 * @param n - specific element in the list of elements
+	 * @param duration - Web Driver Wait Duration
+	 * @param pageLoadDelay - the delay for page loading
+	 * @param stepName - the name of the step
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElement(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
@@ -239,12 +240,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	/**
 	 * Function for selecting a web element from a list of web elements having the same class name,
 	 * using Javascript Executor
-	 * @param text
-	 * @param n
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param text - classname value
+	 * @param n - specific element in the list of elements
+	 * @param duration - Web Driver Wait Duration
+	 * @param pageLoadDelay - the delay for page loading
+	 * @param stepName - the name of the step
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElementJSExecutor(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
@@ -267,12 +268,12 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	/**
 	 * Function for selecting a web element from a list of web elements having the same class name,
 	 * after that element is visible on page
-	 * @param text
-	 * @param n
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param text - classname value
+	 * @param n - specific element in the list of elements
+	 * @param duration - Web Driver Wait Duration
+	 * @param pageLoadDelay - the delay for page loading
+	 * @param stepName - the name of the step
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void clickElementWhenVisible(String text, int n, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		try {
@@ -296,13 +297,13 @@ public class LocalAutoFunctions extends ReadConfigFile {
 	
 	/**
 	 * Function for sending a string value to an input field
-	 * @param selector
-	 * @param text
-	 * @param keyValue
-	 * @param duration
-	 * @param pageLoadDelay 
-	 * @param stepName 
-	 * @throws InterruptedException 
+	 * @param selector - element attribute type
+	 * @param text - element attribute value
+	 * @param keyValue - the value to be sent to the field
+	 * @param duration - Web Driver Wait Duration
+	 * @param pageLoadDelay - the delay for page loading
+	 * @param stepName - the name of the step
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
 	 */
 	public static void sendingKey(String selector, String text, String keyValue, int duration, boolean pageLoadDelay, String stepName) throws InterruptedException {
 		By by = null;

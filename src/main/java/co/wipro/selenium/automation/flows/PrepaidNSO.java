@@ -16,9 +16,9 @@ public class PrepaidNSO extends LocalAutoFunctions {
 
 	/**
 	 * This is the Main Method used to execute the flow steps
-	 * @throws InterruptedException
-	 * @throws IOException 
-	 * @throws ParseException 
+	 * @throws InterruptedException - Exception for 'Thread.sleep()'
+	 * @throws IOException - Exception for setting local Web Driver Path
+	 * @throws ParseException - Exception for parsing the Website URL
 	 */
 	@Test
 	public static void mainMethod() throws InterruptedException, IOException, ParseException {
