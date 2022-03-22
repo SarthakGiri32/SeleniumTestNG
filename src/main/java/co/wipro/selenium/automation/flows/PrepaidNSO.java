@@ -42,7 +42,7 @@ public class PrepaidNSO extends LocalAutoFunctions {
 		clickElementJSExecutor("xpath", VERIZON_CHECK_MY_DEVICE, WAIT_TIME, true, "VERIZON_CHECK_MY_DEVICE");
 		clickElementWhenVisible("xpath", VERIZON_ADD_SIM, WAIT_TIME, false, "VERIZON_ADD_SIM");
 		sendingKey("name", VERIZON_ZIP_CODE_FIELD, ZIP_CODE_1, WAIT_TIME, false, "VERIZON_ZIP_CODE_FIELD");
-		clickElementJSExecutor("xpath", VERIZON_REMEMBER_MY_LOCATION, WAIT_TIME, false, "VERIZON_REMEMBER_MY_LOCATION");
+		clickElementJSExecutor("xpath", VERIZON_REMEMBER_MY_LOCATION, WAIT_TIME, true, "VERIZON_REMEMBER_MY_LOCATION");
 		clickElementJSExecutor("xpath", VERIZON_CONFIRM_LOCATION, WAIT_TIME, true, "VERIZON_CONFIRM_LOCATION");
 		clickElementWhenVisible("cssSelector", VERIZON_LINE_PLAN, WAIT_TIME, false, "VERIZON_LINE_PLAN");
 		clickElementWhenVisible("id", VERIZON_SELECT_PLAN, WAIT_TIME, true, "VERIZON_SELECT_PLAN");

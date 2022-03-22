@@ -1,0 +1,5 @@
+co/wipro/selenium/automation/resources/Variables.class
+co/wipro/selenium/automation/execution/SeleniumTestNGExecution.class
+co/wipro/selenium/automation/flows/LocalAutoFunctions.class
+co/wipro/selenium/automation/resources/ReadConfigFile.class
+co/wipro/selenium/automation/flows/PrepaidNSO.class
